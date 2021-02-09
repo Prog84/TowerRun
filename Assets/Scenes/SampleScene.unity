@@ -231,7 +231,6 @@ MonoBehaviour:
   _distanceChecker: {fileID: 1779179722}
   _fixationMaxDistance: 0.95
   _checkCollider: {fileID: 99339948}
-  _bounceForce: 250
 --- !u!1 &474382758
 GameObject:
   m_ObjectHideFlags: 0

@@ -44,6 +44,10 @@ public class PlayerTower : MonoBehaviour
                     }
 
                     _humans[0].Run();
+                    if (_humans.Count > 1)
+                    {
+                        _humans[Random.Range(1, _humans.Count)].Texting();
+                    }
                     HumanAdded?.Invoke(_humans.Count);
                 }
 

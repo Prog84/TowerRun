@@ -9,6 +9,7 @@ public class Human : MonoBehaviour
 
     private Animator _animator;
     private string _isRunning = "isRunning";
+    private string _isTexting = "isTexting";
 
     private void Awake()
     {
@@ -33,5 +34,15 @@ public class Human : MonoBehaviour
     public void StopRun()
     {
         _animator.SetBool(_isRunning, false);
+    }
+
+    public void Texting()
+    {
+        _animator.SetBool(_isTexting, true);
+    }
+
+    public void StopTexting()
+    {
+        _animator.SetBool(_isTexting, false);
     }
 }
