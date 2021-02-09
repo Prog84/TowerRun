@@ -5,6 +5,7 @@ public class Tower : MonoBehaviour
 {
     [SerializeField] private Vector2Int _humanInTowerRange;
     [SerializeField] private Human[] _humansTemplates;
+    [SerializeField] private float _bounceForce;
 
     private List<Human> _humanInTower;
 
@@ -53,5 +54,15 @@ public class Tower : MonoBehaviour
         Vector3 humanFixationPointY = new Vector3(0, humanFixationPoint.position.y, 0);
 
         return Vector3.Distance(distanceChekerY, humanFixationPointY);
+    }
+
+    public void Break()
+    {
+        foreach (var human in _humanInTower)
+        {
+            human.gameObject.AddComponent<Rigidbody>();
+            human.Bounce(_bounceForce);
+        }
+        Destroy(gameObject);
     }
 }
